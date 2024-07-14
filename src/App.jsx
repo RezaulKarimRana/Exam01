@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import TaskView from "./pages/TaskView";
 import Contact from "./pages/Contact";
 import RootLayout from "./RootLayout";
-
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(

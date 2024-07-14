@@ -1,7 +1,12 @@
 import React from "react";
+import AddTask from "../component/AddTask";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <AddTask />
+    </>
+  );
 };
 
 export default Home;
