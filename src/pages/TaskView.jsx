@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTask } from "../features/taskSlice";
+import UpdateTask from "../component/UpdateTask";
 
 const TaskView = () => {
   const perRow = 3;
@@ -27,6 +28,20 @@ const TaskView = () => {
     setEditedTitle(task.title);
     setEditedDescription(task.description);
   };
+  if (visible) {
+    return (
+      <UpdateTask
+        setVisible={setVisible}
+        editedId={editedId}
+        editedName={editedName}
+        editedTitle={editedTitle}
+        editedDescription={editedDescription}
+        setEditedName={setEditedName}
+        setEditedTitle={setEditedTitle}
+        setEditedDescription={setEditedDescription}
+      />
+    );
+  }
   return (
     <>
       <Helmet>
@@ -41,7 +56,7 @@ const TaskView = () => {
             >
               <h1 className="font-mono text-xl font-bold">Name: {task.name}</h1>
               <h1 className="font-mono text-xl font-bold">
-                Title: {task.brand}
+                Title: {task.title}
               </h1>
               <h1 className="font-sans text-lg font-normal">
                 Description: {task.description}

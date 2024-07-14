@@ -8,9 +8,7 @@ if (saveTaskList) {
 }
 const taskSlice = createSlice({
   name: "task",
-  initialState: {
-    taskList: [],
-  },
+  initialState: initialState,
   reducers: {
     addTask: (state, action) => {
       if (action.payload != "undefined") {
