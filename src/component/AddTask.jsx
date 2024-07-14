@@ -15,7 +15,6 @@ const AddTask = () => {
     title: "",
     description: "",
     createdAt: "",
-    updatedAt: "",
   };
   const dispatch = useDispatch();
   const handleAddTask = (e) => {
@@ -93,7 +92,7 @@ const AddTask = () => {
               <input
                 type="checkbox"
                 onChange={(e) => setCanAdd(!canAdd)}
-                value={canAdd}
+                checked={canAdd}
               />
               <label className="mx-5">i want to add this task</label>
             </div>

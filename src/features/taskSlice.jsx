@@ -1,4 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+const initialState = {
+  taskList: [],
+};
+const saveTaskList = JSON.parse(localStorage.getItem("tasks"));
+if (saveTaskList) {
+  initialState.taskList = saveTaskList;
+}
 const taskSlice = createSlice({
   name: "task",
   initialState: {
@@ -19,6 +26,7 @@ const taskSlice = createSlice({
           task.name = name;
           task.title = title;
           task.description = description;
+          task.createdAt = new Date().toString();
           localStorage.setItem("tasks", JSON.stringify(state.taskList));
         }
       }
